@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    networks:
+      - bridge
+    ports:
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"
+
+networks:
+  bridge:
+    name: bridge
+    driver: bridge
